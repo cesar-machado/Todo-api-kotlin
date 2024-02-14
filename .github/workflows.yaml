@@ -1,4 +1,4 @@
-name: CI with Gradle
+name: CI Test
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: openjdk:11
+    container: openjdk:17
 
     steps:
       - uses: actions/checkout@v3
