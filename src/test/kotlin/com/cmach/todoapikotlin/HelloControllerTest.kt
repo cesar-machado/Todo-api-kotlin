@@ -14,11 +14,8 @@ class HelloControllerTest {
 
     @Autowired lateinit var mockMvc: MockMvc
 
-//    @Autowired lateinit var helloRepository: HelloRepository
-
     @Test
     fun `test find hello`() {
-//        helloRepository.save(Hello(id = 1 , content = "Hello, World"))
         mockMvc.get("/hello")
             .andDo { print() }
             .andExpect {
