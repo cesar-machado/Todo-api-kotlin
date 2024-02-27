@@ -24,9 +24,9 @@ repositories {
 dependencies {
 
 	implementation("com.auth0:java-jwt:4.4.0")
-	implementation("io.jsonwebtoken:jjwt-api:0.12.3")
-	implementation("io.jsonwebtoken:jjwt-impl:0.12.3")
-	implementation("io.jsonwebtoken:jjwt-jackson:0.12.3")
+	implementation("io.jsonwebtoken:jjwt-api:0.11.3")
+	implementation("io.jsonwebtoken:jjwt-impl:0.11.3")
+	implementation("io.jsonwebtoken:jjwt-jackson:0.11.3")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("jakarta.validation:jakarta.validation-api:3.0.2")
 
