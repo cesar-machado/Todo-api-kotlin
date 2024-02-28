@@ -13,7 +13,6 @@ import java.util.*
 class JWTService(
     jwtEnv: JwtEnv
 ) {
-//    private val SECRET = "77397A244326462948404D635166546A576E5A7234753778214125442A472D4B"
         private val SECRET = jwtEnv.key
 
 
