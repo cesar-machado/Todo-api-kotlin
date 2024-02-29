@@ -8,23 +8,26 @@ import com.cmach.todoapikotlin.repository.UserRepository
 import org.slf4j.LoggerFactory
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-
 import java.util.*
 
 @Service
-class AuthService(
+class AuthService (
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder,
     private val jwtService: JWTService,
     private val authManager: AuthenticationManager
 ) {
     private val logger = LoggerFactory.getLogger(AuthService::class.java)
+
     fun register(
         authRegister : AuthRegisterDTO
     ): String {
-        val user = User(UUID.randomUUID(),authRegister.email, passwordEncoder.encode(authRegister.password))
+        val encode2 = BCryptPasswordEncoder().encode(authRegister.password)
+//        logger.info("Encoded Pass $encode2")
+        val user = User(UUID.randomUUID(),authRegister.email, encode2)
         userRepository.save(user)
         return "user added"
     }
