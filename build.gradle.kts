@@ -41,7 +41,15 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+	testImplementation("io.mockk:mockk:1.12.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation ("org.testcontainers:testcontainers:1.19.6")
+	testImplementation("org.testcontainers:junit-jupiter")
+
+
+
 
 }
 

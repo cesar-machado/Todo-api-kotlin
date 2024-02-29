@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 
 
@@ -19,6 +20,7 @@ class AppConfig(private val userRepository: UserRepository) {
 
     @Bean
     fun passEncoder(): BCryptPasswordEncoder = BCryptPasswordEncoder();
+
 
     @Bean
     fun userDetailsService(): UserDetailsService {

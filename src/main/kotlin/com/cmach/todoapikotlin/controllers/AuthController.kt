@@ -16,7 +16,7 @@ class AuthController(private val authService: AuthService) {
         @RequestBody authRegisterDTO: AuthRegisterDTO
 
     ): String {
-        logger.info("O que veio $authRegisterDTO")
+//        logger.info("O que veio $authRegisterDTO")
         return authService.register(authRegisterDTO)
     }
 
@@ -24,7 +24,7 @@ class AuthController(private val authService: AuthService) {
     fun login(
         @RequestBody authRegisterDTO: AuthRegisterDTO
     ): String {
-        logger.info("O que veio $authRegisterDTO")
+//        logger.info("O que veio $authRegisterDTO")
         return authService.login(authRegisterDTO)
     }
 

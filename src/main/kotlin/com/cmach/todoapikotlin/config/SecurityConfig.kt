@@ -24,6 +24,7 @@ class SecurityConfigs(
         http.csrf { it.disable() }
             .cors{it.disable()}
             .authorizeHttpRequests{
+                it.requestMatchers(HttpMethod.GET,"/hello").permitAll()
                 it.requestMatchers(HttpMethod.POST,"/api/auth/login").permitAll()
                 it.requestMatchers(HttpMethod.POST,"/api/auth/register").permitAll()
                 it.requestMatchers("/api/user").hasAuthority(Role.ADMIN.name)
